@@ -62,9 +62,9 @@ void loop() {
   read_CTRL_B = analogRead(CTRL_B);
 
   // Convert analog value to 0 to 255 value
-  int new_value_CTRL_R = map(read_CTRL_R, 0, 660, 0, 255);
-  int new_value_CTRL_G = map(read_CTRL_G, 0, 660, 0, 255);
-  int new_value_CTRL_B = map(read_CTRL_B, 0, 660, 0, 255);
+  int new_value_CTRL_R = map(read_CTRL_R, 0, 1023, 0, 255);
+  int new_value_CTRL_G = map(read_CTRL_G, 0, 1023, 0, 255);
+  int new_value_CTRL_B = map(read_CTRL_B, 0, 1023, 0, 255);
 
   // Count changed range
   int changedValue_R = value_CTRL_R - new_value_CTRL_R;
@@ -77,23 +77,27 @@ void loop() {
   changedValue_B = changedValue_B < 0 ? changedValue_B * -1 : changedValue_B;
 
   // If changed value is greather than 2 then update LCD screen
-  if ((changedValue_R > 2) || (changedValue_G > 2) || (changedValue_B > 2)) {
+  if ((changedValue_R > 1) || (changedValue_G > 1) || (changedValue_B > 1)) {
     value_CTRL_R = new_value_CTRL_R;
     value_CTRL_G = new_value_CTRL_G;
     value_CTRL_B = new_value_CTRL_B;
 
     lcd.clear();
     lcd.setCursor(0, 0);
-    lcd.print("RGB Controler");
+    lcd.print("Red");
+    lcd.setCursor(6, 0);
+    lcd.print("Green");
+    lcd.setCursor(12, 0);
+    lcd.print("Blue");
     
     lcd.setCursor(0, 1);
     lcd.print(value_CTRL_R);
-    lcd.print(", ");
+    lcd.setCursor(6, 1);
     lcd.print(value_CTRL_G);
-    lcd.print(", ");
+    lcd.setCursor(12, 1);
     lcd.print(value_CTRL_B);
 
-    delay(50);
+    delay(100);
   }
 
   // Set color for LED and LCD
