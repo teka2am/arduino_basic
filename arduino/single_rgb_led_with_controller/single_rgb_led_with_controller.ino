@@ -1,7 +1,7 @@
 /*
  *  Single RGB LED controller
  *  Arduino Rev 3
- *  Using 3 resisters (as Red-Green-Blue) to change LED color
+ *  Using 3 resistors (as Red-Green-Blue) to change LED color
  *  
  *  This script is using LCD with RGB background
  *  Need to import Grove - LCD RGB Backlight library
