@@ -1,5 +1,5 @@
 ### Components:
-+ Ardiono Uno R3
++ Arduino Uno R3
 + 3 Resistors type potentionmeter 10kΩ
 + 3 Resistors 470Ω
 + 1 RGB LED CommonAnode
