@@ -6,7 +6,8 @@
  *  This script is using LCD with RGB background
  *  Need to import Grove - LCD RGB Backlight library
  *  https://github.com/Seeed-Studio/Grove_LCD_RGB_Backlight
- *  
+ *  Please comment/delete lines relate to LCD if you don't have  
+ *
  *  Created 17 Dec 2021 - by teka2am
  */
  
